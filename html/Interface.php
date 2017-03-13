@@ -7,7 +7,7 @@
 	<style type= "text/css">
 	
 		#header{
-		background-color: pink;
+		background-color: blue;
 		width:1340px;
 		height: 80px;
 		padding: 2px;
@@ -31,7 +31,7 @@
 		border: 1px solid black;
 		border-radius: 10px;
 		padding: 2px;
-		background-color: purple;
+		background-color: white;
 		width: 500px;
 		height: 300px;
 		}
