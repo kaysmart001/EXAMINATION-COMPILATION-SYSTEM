@@ -2,13 +2,13 @@
 <html lang="en">
 <html>
 <head>
-<title>TEACHERS</title>
+<title>Admin</title>
 </head>
 	<style type= "text/css">
 	
 		#header{
 		font-family: Times New Roman;
-		background-color: pink;
+		background-color: purple;
 		text-align: center;
 		font-size: 20px;
 		width: 1340px;
@@ -45,18 +45,19 @@
 		border: 1px solid black;
 		border-radius: 5px;
 		}
+		
 		input[type="text"]{
 		border: 1px solid black;
 		height: 25px;
 		width: 200px;
 		border-radius: 5px;
-		}
+	}
 </style>
 
 <body> 
 <div id="header">
-<h1>TEACHERS PORTAL</h1>
-<a href="interface.php"><h3>HOME</h3></a>
+<h1>NEW QUESTIONS</h1>
+<a href="admin.php"><h3>LOG OUT</h3></a>
 </div>
 <br>
 <br>
@@ -67,19 +68,23 @@
 <table>
     <tr>
 	<td>
-	<h2> LOGIN</h2>
-	<hr> </hr>
- <form action= "connect4.php" method="POST">
-	<br> Username: <input type="Username" name="Username" placeholder="Username" required="required" maxlength="25">
+ <form action= "mali.php" method="POST">
+
+ 	
+	<br> TEACHERS NAME:<br> <input type="text" name="day" required="required" maxlength="30">
 	<br>
-	<br> Password: <input type="Password" name="Password" placeholder="Password" required="required" maxlength="25">
+	<br> CLASS:<br> <input type="text" name="title" required="required" maxlength="12">
 	<br>
+	<br> SUBJECT:<br> <input type="text" name="sub" required="required" maxlength="15">
 	<br>
-	 <input type="Submit" name="Submit" value="Login"/>
+	
+	
+	<br>
+	 <input type="Submit" name="Submit" value="CHECK"/>
  </form>
  </td>
  </tr>
-</table>
+</tab>
 </center>
 </body>
 

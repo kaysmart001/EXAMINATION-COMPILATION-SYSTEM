@@ -2,7 +2,7 @@
 <html lang="en">
 <html>
 <head>
-<title>TEACHERS</title>
+<title>Student</title>
 </head>
 	<style type= "text/css">
 	
@@ -50,12 +50,12 @@
 		height: 25px;
 		width: 200px;
 		border-radius: 5px;
-		}
+	}
 </style>
 
 <body> 
 <div id="header">
-<h1>TEACHERS PORTAL</h1>
+<h1>STUDENT PORTAL</h1>
 <a href="interface.php"><h3>HOME</h3></a>
 </div>
 <br>
@@ -67,13 +67,44 @@
 <table>
     <tr>
 	<td>
-	<h2> LOGIN</h2>
+	<h2>LOGIN</h2>
 	<hr> </hr>
- <form action= "connect4.php" method="POST">
-	<br> Username: <input type="Username" name="Username" placeholder="Username" required="required" maxlength="25">
+<form action= "connect2.php" method="POST">
+	<br> Username: <input type="Username" name="Username" placeholder="Username" required="required" maxlength="30">
 	<br>
-	<br> Password: <input type="Password" name="Password" placeholder="Password" required="required" maxlength="25">
+	<br> Password: <input type="Password" name="Password" placeholder="Password" required="required" maxlength="30">
 	<br>
+	<br><strong>Form<strong>
+	<select name="Form">
+	<option value="user"> --------- </option>
+	<option value="one"> one </option>
+	<option value="two"> two </option>
+	<option value="three"> three </option>
+	
+	</select>
+	<br>
+	<br>
+	<strong>Term<strong>
+	<select name="Term">
+	<option value="user"> --------- </option>
+	<option value="First"> First </option>
+	<option value="Second"> Second </option>
+	<option value="Third"> Third </option>
+	</select>
+	<br>
+	</select>
+	<br>
+	<br>
+	<strong>Department<strong>
+	<select name="Department">
+	<option value="user"> --------- </option>
+	<option value="Science"> Science </option>
+	<option value="Business"> Business </option>
+	<option value="Art"> Art </option>
+	<option value="Home Economics"> Home Economics </option>
+	</select>
+	<br>
+
 	<br>
 	 <input type="Submit" name="Submit" value="Login"/>
  </form>
