@@ -1,24 +1,23 @@
 <?php
-//get user input
-$Name=$_POST['users'];
-$Password=$_POST['passs'];
 
-//create local variables
-$taken="false";
-$database="grading system";
-$password="";
-$username="root";
+$inputuser =$_POST['Username'];
+$inputpass =$_POST['Password']; 
 
+$username = "root";
+$password = "";
+$database = "ecs";
 
-//connect to database
-      $con = mysql_connect('localhost', $username, $password) or die ("unable to log into database");
-@mysql_select_db($database, $con) or die ("unable to connect");
+$connect=mysql_connect("localhost", $username, $password);
+@mysql_select_db($database) or die ("unable to connect");
 
-mysql_query("INSERT INTO `ideas` VALUES ('$Name', '$Password')") or die ("strange error");
+$query = "SELECT * FROM `student` WHERE `Username` = '$inputuser' AND  `Password` = '$inputpass'";
 
-echo "TEACHER ACCOUNT UPDATED";
-header ('location: teach2.html');
+$result = mysql_query($query);
 
-mysql_close($con);
+$row = mysql_fetch_array($result); 
 
+if($row["Username"]==$inputuser && $row["Password"]==$inputpass)
+header ('location: resulting.html');
+else
+header ('location: Resultlogin.html');
 ?>

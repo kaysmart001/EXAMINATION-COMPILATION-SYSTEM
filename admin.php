@@ -8,7 +8,7 @@
 	
 		#header{
 		font-family: Times New Roman;
-		background-color: pink;
+		background-color: blue;
 		text-align: center;
 		font-size: 20px;
 		width: 1340px;
