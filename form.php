@@ -71,16 +71,15 @@
  <form action= "mali.php" method="POST">
 
  	
-	<br> TEACHERS NAME:<br> <input type="text" name="day" required="required" maxlength="30">
+	<br> 
 	<br>
-	<br> CLASS:<br> <input type="text" name="title" required="required" maxlength="12">
-	<br>
-	<br> SUBJECT:<br> <input type="text" name="sub" required="required" maxlength="15">
+	<br> 
+	<br> 
 	<br>
 	
 	
 	<br>
-	 <input type="Submit" name="Submit" value="CHECK"/>
+	 <input type="Submit" name="Submit" value="APPROVE"/>
  </form>
  </td>
  </tr>

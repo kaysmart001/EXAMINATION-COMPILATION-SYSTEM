@@ -56,7 +56,7 @@
 
 <body> 
 <div id="header">
-<h1>FEES AUTHENTICATION</h1>
+<h1>NEW QUESTIONS</h1>
 <a href="admin.php"><h3>LOG OUT</h3></a>
 </div>
 <br>
@@ -64,27 +64,21 @@
 <br>
 <br>
 <br>
-<center>	
-<table>
+<center>
+	
+
     <tr>
 	<td>
- <form action= "insert.php" method="POST">
- 	<h2>FEES SUCESSFULLY UPDATED!!!</h2>
- 	
-	<br> STUDENT NAME:<br> <input type="text" name="day" required="required" maxlength="30">
-	<br>
-	<br> FORM:<br> <input type="text" name="title" required="required" maxlength="12">
-	<br>
-	<br> AMOUNT PAID: <br><input type="text" name="code" required="required" maxlength="12">
-	<br>
-	
-	<br>
-	 <input type="Submit" name="Submit" value="Save"/>
- </form>
- </td>
- </tr>
-</tab>
+ <form action="upload.php" method="post" enctype="multipart/form-data">
+<input type="file" name="file" />
+<button type="submit" name="btn-upload">upload</button>
+
 </center>
+</form>
+
+ 	
+ 	
+ 
 </body>
 
 </html>
