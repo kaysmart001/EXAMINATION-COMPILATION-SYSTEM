@@ -8,7 +8,7 @@
 	
 		#header{
 		font-family: Times New Roman;
-		background-color: purple;
+		background-color: blue;
 		text-align: center;
 		font-size: 20px;
 		width: 1340px;
@@ -19,19 +19,19 @@
 		background-color: #eee5de;
 		}
 		form{
-		text-align: center;
+		text-align: left;
 		margin-right: 50px;
 		}
 		h2{
 		font-family: Times New Roman;
 		font-size: 20px;
-		text-align: center;
+		text-align: left;
 		color: black;
 		}
 		table{
 		border: 1px solid black;
 		border-radius: 10px;
-		text-align: center;
+		text-align: left;
 		padding: 0px;
 		background-color: white;
 		width: 500px;
@@ -56,7 +56,7 @@
 
 <body> 
 <div id="header">
-<h1>EXAM PASS AUTHENTICATION</h1>
+<h1>QUESTIONS</h1>
 <a href="admin.php"><h3>LOG OUT</h3></a>
 </div>
 <br>
@@ -64,26 +64,47 @@
 <br>
 <br>
 <br>
-<center>	
+	
 <table>
     <tr>
 	<td>
  <form action= "get2.php" method="POST">
+ 	<FORM method="POST"
+
+
+
+ 	 
+      onSubmit="return checkAnswer(this,'B');"
+>
+What is JavaScript?
+<br>
+<FORM method="POST"
+      onSubmit="return checkAnswer(this,'B');"
+>
+
+<INPUT TYPE="RADIO" VALUE="A" NAME="cc">
+A. Another name for Java<BR>
+
+<INPUT TYPE="RADIO" VALUE="B" NAME="cc">
+B. A scripting language mostly for the web<BR>
+
+<INPUT TYPE="RADIO" VALUE="C" NAME="cc">
+C. When you use Java without compiling<BR>
+
+
+</FORM>
+
+</FORM>
  	
-	<br> STUDENT NAME:<br> <input type="text" name="name" required="required" maxlength="30">
-	<br>
-	<br> FORM:<br> <input type="text" name="P" required="required" maxlength="12">
-	<br>
-	<br> TERM: <br><input type="text" name="Q" required="required" maxlength="12">
 	<br>
 	
 	<br>
-	 <input type="submit" name="submit" value="PRINT PERMIT"/>
+	 <input type="submit" name="submit" value="SUBMIT"/>
  </form>
  </td>
  </tr>
 </tab>
-</center>
+
 </body>
 
 </html>

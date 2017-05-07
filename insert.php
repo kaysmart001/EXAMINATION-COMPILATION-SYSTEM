@@ -1,12 +1,13 @@
 <?php
 //get user input
-$STUDENTNAME=$_POST['day'];
-$FORM=$_POST['title'];
-$AMOUNTPAID=$_POST['code'];
+$Username=$_POST['users'];
+$Password=$_POST['passs'];
+$Class=$_POST['class'];
+$Subject=$_POST['subj'];
 
 //create local variables
 $taken="false";
-$database="grading system";
+$database="ecs";
 $password="";
 $username="root";
 
@@ -15,10 +16,10 @@ $username="root";
       $con = mysql_connect('localhost', $username, $password) or die ("unable to log into database");
 @mysql_select_db($database, $con) or die ("unable to connect");
 
-mysql_query("INSERT INTO `fee` VALUES ('$STUDENTNAME', '$FORM', '$AMOUNTPAID')") or die ("strange error");
+mysql_query("INSERT INTO `teachers` VALUES ('$Username', '$Password', '$Class', '$Subject')") or die ("strange error");
 
-echo "STUDENT FEES UPDATED";
-header ('location: form2.php');
+echo "NEW USER ADDED";
+header ('location:teach2.html');
 
 mysql_close($con);
 
