@@ -18,6 +18,7 @@ function startTimer() {
   myVar = setInterval(function(){myTimer()},1000);
   timelimit = maxtimelimit;
 }
+
 function myTimer() {
   if (timelimit > 0) {
     curmin=Math.floor(timelimit/60);
@@ -27,17 +28,24 @@ function myTimer() {
     $_('timeleft').innerHTML = curtime;
   } else {
     $_('timeleft').innerHTML = timelimit+' - Out of Time - no credit given for answer';
-    clearInterval(myVar);
+//    clearInterval(myVar);
+    checkAnswer();
   }
   timelimit--;
-}
+}  
 
-
+// Modified from: http://www.webdeveloper.com/forum/showthread.php?304231-HTML-Random-Quiz-Game-w-Timer
 
 var pos = 0, posn, choice, correct = 0, rscore = 0;
 var maxtimelimit = 20, timelimit = maxtimelimit;  // 20 seconds per question
 
 var questions = [
+    [ "What character is this? <img src='http://www.nova.edu/hpd/otm/pics/4fun/BuzzLite.JPG' alt='Buzz'>",
+      "Mickey","Bugs","Buzz Lightyear","C"],
+    [ "Which is a GUMBY?",
+      "<img src='http://www.nova.edu/hpd/otm/pics/4fun/RUNNOSE.JPG' alt=''>",
+      "<img src='http://www.nova.edu/hpd/otm/pics/4fun/Gumby.JPG' alt=''>",
+      "<img src='http://www.nova.edu/hpd/otm/pics/4fun/Taz_CAR.JPG' alt=''>","B"],
     [ "What is 10 + 4?", "12", "14", "16", "B" ],
     [ "What is 20 - 9?", "7", "13", "11", "C" ],
     [ "What is 7 x 3?", "21", "24", "25", "A" ],
@@ -49,11 +57,15 @@ var questions = [
     [ "What is 5 x 5?", "21", "24", "25", "C" ],
     [ "What is 8 / 4?", "10", "2", "4", "B" ]
 ];
+
 var questionOrder = [];
+var maxNumberOfQuestions = questions.length;  // do NOT make BIGGER than number of 'questions' array
+// var maxNumberOfQuestions = 5;  // do NOT make BIGGER than number of 'questions.length' array
+
 function setQuestionOrder() {
   questionOrder.length = 0;
-  for (var i=0; i<questions.length; i++) { questionOrder.push(i); }
-  questionOrder.sort(randOrd);   r
+  for (var i=0; i<maxNumberOfQuestions; i++) { questionOrder.push(i); }
+//  questionOrder.sort(randOrd);   // alert(questionOrder);  // shuffle display order
   pos = 0;  posn = questionOrder[pos];
 }
 
@@ -61,7 +73,7 @@ function $_(IDS) { return document.getElementById(IDS); }
 function randOrd() { return (Math.round(Math.random())-0.5); }
 function renderResults(){
   var test = $_("test");
-  test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+  test.innerHTML = "<h2>You got "+correct+" of "+maxNumberOfQuestions+" questions correct</h2>";
   $_("test_status").innerHTML = "Test Completed";
   $_('timeleft').innerHTML = '';
   test.innerHTML += '<button onclick="location.reload()">Re-test</a> ';
@@ -72,7 +84,7 @@ function renderResults(){
 }
 function renderQuestion() {
   var test = $_("test");
-  $_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+  $_("test_status").innerHTML = "Question "+(pos+1)+" of "+maxNumberOfQuestions;
   if (rscore != 0) { $_("test_status").innerHTML += '<br>Currently: '+(correct/rscore*100).toFixed(0)+'% correct'; }
   var question = questions[posn][0];
   var chA = questions[posn][1];
@@ -96,7 +108,7 @@ function checkAnswer(){
   rscore++;
   if (choice == questions[posn][4] && timelimit > 0) { correct++; }
   pos++;  posn = questionOrder[pos];
-  if (pos < questions.length) { renderQuestion(); } else { renderResults(); }
+  if (pos < maxNumberOfQuestions) { renderQuestion(); } else { renderResults(); }
 }
 
 window.onload = function() {
