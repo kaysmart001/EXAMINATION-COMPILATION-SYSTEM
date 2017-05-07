@@ -17,7 +17,7 @@ $result = mysql_query($query);
 $row = mysql_fetch_array($result); 
 
 if($row["Username"]==$inputuser && $row["Password"]==$inputpass)
-header ('location: user.html');
+header ('location: mole.html');
 else
 header ('location: facultylogin.html');
 ?>

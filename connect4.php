@@ -1,7 +1,7 @@
 <?php
 
 $inputuser =$_POST['Username'];
-$inputpass =$_POST['Password']; 
+$inputpass =$_POST['Password'];
 
 $username = "root";
 $password = "";
@@ -14,7 +14,7 @@ $query = "SELECT * FROM `admin` WHERE `Username` = '$inputuser' AND  `Password` 
 
 $result = mysql_query($query);
 
-$row = mysql_fetch_array($result); 
+$row = mysql_fetch_array($result);
 
 if($row["Username"]==$inputuser && $row["Password"]==$inputpass)
 header ('location: admine.html');
