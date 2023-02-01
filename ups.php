@@ -6,13 +6,13 @@ $Content=$_POST['file'];
 $Size=$_POST['file'];
 //create local variables
 $taken="false";
-$database="ecs";
-$password="";
-$username="root";
+$database="epiz_33459705_testme_db";
+$password="hvZgW4p2guu7";
+$username="epiz_33459705";
 
 
 //connect to database
-      $con = mysql_connect('localhost', $username, $password) or die ("unable to log into database");
+      $con = mysql_connect('sql311.epizy.com', $username, $password) or die ("unable to log into database");
 @mysql_select_db($database, $con) or die ("unable to connect");
 
 mysql_query("INSERT INTO `upload` VALUES ('$Name', '$Type', '$Content', '$Size')") or die ("strange error");
