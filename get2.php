@@ -2,11 +2,11 @@
 <?php
 
 $taken="false";
-$database="grading system";
-$password="";
-$username="root";
+$database="epiz_33459705_testme_db";
+$password="hvZgW4p2guu7";
+$username="epiz_33459705";
 
- $con = mysql_connect('localhost', $username, $password) or die ("unable to log into database");
+ $con = mysql_connect('sql311.epizy.com', $username, $password) or die ("unable to log into database");
 @mysql_select_db($database, $con) or die ("unable to connect");
 
 
