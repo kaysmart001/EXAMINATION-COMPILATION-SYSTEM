@@ -3,11 +3,11 @@
 $inputuser =$_POST['Username'];
 $inputpass =$_POST['Password'];
 
-$username = "root";
-$password = "";
-$database = "ecs";
+$username = "epiz_33459705";
+$password = "hvZgW4p2guu7";
+$database = "epiz_33459705_testme_db";
 
-$connect=mysql_connect("localhost", $username, $password);
+$connect=mysql_connect("sql311.epizy.com", $username, $password);
 @mysql_select_db($database) or die ("unable to connect");
 
 $query = "SELECT * FROM `admin` WHERE `Username` = '$inputuser' AND  `Password` = '$inputpass'";
